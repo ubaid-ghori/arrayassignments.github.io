@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add or Delete Names</title>
 </head>
 <body>
     <h1>Add or Delete Names</h1>
-    <button onclick="add()">add</button>
-    <button onclick="delt()">delete</button>
-    <br>
-    <br>
+    <button onclick="add()">Add</button>
+    <button onclick="del()">Delete</button>
+    <br><br>
+    <div id="output"></div>
+    <script>
+        let array = ["bilal","zain","naseem","salman","rashid"];
+        document.getElementById("output").innerHTML=array;
+        function add(){
+            let user=prompt("enter a name");
+            let index=parseInt(prompt("enter a index number"))
+            array.splice(index,0,user);
+            document.getElementById("output").innerHTML=array;
+        }
+        function del() {
+            let index = parseInt(prompt("Enter the index number which you want to delete"));
+            array.splice(index,1);
+            document.getElementById("output").innerHTML = array;
+        }
+    </script>
 </body>
-<script>
-    let array=["bilal","<br>","<br>","zain","<br>","<br>","naseem","<br>","<br>","salman","<br>","<br>","rashid"]
-    document.write(array)
-    function add(){
-        let user=prompt("enter a name")
-        let index=parseInt(prompt("enetr the index number  where do you want to add"))
-        array.splice(index,0,user)
-        document.write(array)
-    }
-    function delt(){
-        let index=parseInt(prompt("enter the index number  which do you want to delete"))
-        array.splice(index,1,)
-        document.write(array)
-    }
-</script>
 </html>
